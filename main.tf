@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "vulnerable_bucket" {
   acl    = "public-read" # Vulnerability: Bucket is publicly readable
 
   versioning {
-    enabled = false # Vulnerability: Versioning is not enabled
+    enabled = false 
   }
 
   lifecycle_rule {
