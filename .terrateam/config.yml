@@ -4,18 +4,11 @@ hooks:
       - type: oidc
         provider: aws
         role_arn: "arn:aws:iam::017777978390:role/terrateam"
-workflows:
-  - tag_query: "dir:policy-check"
-    plan:
-      - type: init
-      - type: plan
-      - type: run
-        cmd: ['conftest-wrapper']
-        capture_output: true
-    apply:
-      - type: init
-      - type: apply
-drift:
+access_control:
   enabled: true
-  reconcile: true
-  schedule: hourly
+  policies:
+    - tag_query: ''
+      plan: ['user:Cipher-08']
+      apply: ['user:Cipher-08']
+      apply_autoapprove: ['user:Cipher-08']
+      apply_force: ['user:Cipher-08']
