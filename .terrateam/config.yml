@@ -9,6 +9,6 @@ access_control:
   policies:
     - tag_query: ''
       plan: ['user:Cipher-08']
-      apply: ['user:Cipher-08']
+      apply: ['user:Sid-Lais']
       apply_autoapprove: ['user:Cipher-08']
       apply_force: ['user:Cipher-08']
