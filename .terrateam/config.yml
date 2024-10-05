@@ -5,13 +5,13 @@ hooks:
         provider: aws
         role_arn: "arn:aws:iam::017777978390:role/terrateam"
 workflows:
-  - tag_query: 'dir:aws/us-east-1/production/iam'
+  - tag_query: "dir:policy-check"
     plan:
       - type: init
       - type: plan
-      - type: env
-        name: CONFTEST_POLICY
-        cmd: ['echo', '$TERRATEAM_ROOT/aws/policies/iam/']
       - type: run
         cmd: ['conftest-wrapper']
         capture_output: true
+    apply:
+      - type: init
+      - type: apply
