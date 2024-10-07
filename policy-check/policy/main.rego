@@ -26,5 +26,5 @@ deny[msg] {
 
     num_resources > 0
 
-    msg := "null resources cannot be created"
+    msg := "null resources cannot be created according to the policies"
 }
