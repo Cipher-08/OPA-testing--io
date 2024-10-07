@@ -8,7 +8,6 @@ workflows:
   - tag_query: "dir:policy-check"
     plan:
       - type: init
-      - type: plan
       - type: run
         cmd: ['conftest-wrapper']
         capture_output: true
